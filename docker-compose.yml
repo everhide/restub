@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  restub:
+    restart: always
+    container_name: "restub"
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "restub:v1.0"
+    volumes:
+      - "./:/opt/data"
+      - "./tests:/opt/data/tests:ro"
+      - "./restub:/opt/data/restub:ro"
